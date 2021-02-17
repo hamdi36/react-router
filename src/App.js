@@ -4,7 +4,7 @@ import Main from './component/Main';
 import { moviesData } from './component/MoviesData'
 import Header from './component/Header/Header';
 import { Route, Switch } from "react-router-dom";
-import Home from './component/Home';
+import MovieDesc from './component/Description/MovieDesc';
 function App(props) {
   const [movies, setMovies] = useState(moviesData);
   const [search, setSearch] = useState("")
@@ -17,11 +17,16 @@ function App(props) {
       <Header setSearch={setSearch} />
       <Switch>
         {/* <Route exact path="/" > */}
-          <Main movies={movies.filter((el) =>
+        
+          <Route exact path="/" render={(props) => (<Main {...props} movies={movies}  movies={movies.filter((el) =>
             el.name.toLowerCase().includes(search.trim()))}
-            AddNewMovie={AddNewMovie} />
-    
-          <Route exact path="/Home/:id" render={(props) => (<Home {...props} movies={movies} />)} />
+            AddNewMovie={AddNewMovie} />)} />
+
+
+            <Route path="/movies/:id" render={(props)=> <MovieDesc movies={movies} {...props} />}/>
+            
+
+            
      </Switch>
     
     </div>

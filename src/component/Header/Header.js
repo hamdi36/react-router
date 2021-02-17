@@ -1,16 +1,16 @@
 import React from "react";
 import "./Header.css";
-import {NavLink} from "react-router-dom"; 
+// import {NavLink} from "react-router-dom"; 
 
 
 const Header = ({setSearch}) => {
   return (
 
     <div className="search-container">
-         <nav>
+         {/* <nav>
          <NavLink to ='/' exact style={{color: "white",fontSize:"60%", marginLeft :"2%" }} >Home
           </NavLink>
-      </nav> 
+      </nav>  */}
 
       
    

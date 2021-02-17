@@ -1,9 +1,16 @@
 import React from "react";
 import "./MovieCard.css";
 import Rate from "../Rate";
-const MovieCard = ({movie}) => {
+import {Link} from 'react-router-dom'
+const MovieCard = ({movie,match}) => {
+  console.log(match)
   return (
     <div className="container">
+
+      <Link to = {`/movies/${movie.id}`}
+      >
+
+
     <div className="movie">
       <div className="movie-rating">
         <Rate rating={movie.rating} />
@@ -33,6 +40,7 @@ const MovieCard = ({movie}) => {
         </div>
       </div>
     </div>
+      </Link>
   </div>
     
   );
